@@ -1,23 +1,22 @@
-
-var hIndex = function(citations) {
+var hIndex = function (citations) {
 
     let answer = 0;
+    let n = citations.length;
 
-    for (let i = 0; i < citations.length; i++) {
+    for (let h = 1; h <= n; h++) {
 
-        let citation = citations[i];
         let count = 0;
 
-        for (let j = 0; j < citations.length; j++) {
+        for (let i = 0; i < n; i++) {
 
-            if (citations[j] >= citation) {
+            if (citations[i] >= h) {
                 count++;
             }
 
         }
 
-        if (count >= citation) {
-            answer = Math.max(answer, citation);
+        if (count >= h) {
+            answer = h;
         }
 
     }
