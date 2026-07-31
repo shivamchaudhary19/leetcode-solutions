@@ -1,3 +1,5 @@
+import java.util.*; // Only inside code editors
+
 class Solution {
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
