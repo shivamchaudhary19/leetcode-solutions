@@ -19,7 +19,6 @@ class Solution {
 
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        // Prefix sum 0 has appeared once
         map.put(0, 1);
 
         int sum = 0;
@@ -29,10 +28,8 @@ class Solution {
 
             sum += num;
 
-            // Check if a previous prefix sum gives subarray sum k
             count += map.getOrDefault(sum - k, 0);
 
-            // Store current prefix sum
             map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
 
